@@ -1,0 +1,98 @@
+ * {
+    font-family: "Nunito";
+ }
+
+ #container {
+    position: static;
+    width: 637px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7%;
+    height: 475px;
+ }
+
+ form {
+    position: static;
+    max-width: 30%; 
+    min-width: 265px; 
+    border-width: 1px; 
+    border-color: #3D3D3D; 
+    border-radius: 5px; 
+    border-style: solid; 
+    color: #222222; 
+    margin: 0px; 
+    background-color: #FFFFFF; 
+    padding: 20px; 
+}
+
+form label { 
+    color: #3D3D3D; 
+    font-size: 16px; 
+    display: block; 
+}
+
+form input, form textarea, form select { 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: #3D3D3D; 
+    border-radius: 0px; 
+    padding: 3px; 
+    width: 97.5%; 
+} 
+
+form h1 { 
+    font-size: 30px; 
+    color: #607A75; 
+    padding: 0px; 
+    margin: 0px; 
+    margin-bottom: 10px; 
+    border-radius: 0px; 
+    background-color: #ffffff; 
+} 
+
+.content {
+    margin-top: 15px;
+}
+
+.clear { 
+    clear: both; 
+} 
+
+.field { 
+    margin-bottom: 5px; 
+} 
+
+input {
+    height: 25px;
+    font-size: 14px;
+    color: #3D3D3D;
+}
+
+label {
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+#BaseMealPrice, #TaxRate {
+    margin-bottom: 5px;
+}
+
+#MealForm {
+    float: left;
+    height: 433px;
+    margin-left: 0px;
+}
+
+#CustomerForm, #EarningsForm {
+    float: right;
+    margin-right: 0px;
+    height: 185px;
+}
+
+#EarningsForm {
+    margin-top: 22px;
+}
+
+p {
+    color: #3D3D3D;
+}
