@@ -2,6 +2,10 @@
     font-family: "Nunito";
  }
 
+ body {
+    background: #9CB6B1;
+ }
+
  #container {
     position: static;
     width: 637px;
@@ -19,10 +23,10 @@
     border-color: #3D3D3D; 
     border-radius: 5px; 
     border-style: solid; 
-    color: #222222; 
+    color: #3D3D3D; 
     margin: 0px; 
+    padding: 20px;
     background-color: #FFFFFF; 
-    padding: 20px; 
 }
 
 form label { 
@@ -41,13 +45,13 @@ form input, form textarea, form select {
 } 
 
 form h1 { 
-    font-size: 30px; 
-    color: #607A75; 
+    font-size: 30px;
+    font-weight: lighter;
+    color: #758F8A; 
     padding: 0px; 
     margin: 0px; 
     margin-bottom: 10px; 
     border-radius: 0px; 
-    background-color: #ffffff; 
 } 
 
 .content {
@@ -79,7 +83,7 @@ label {
 
 #MealForm {
     float: left;
-    height: 433px;
+    height: 435px;
     margin-left: 0px;
 }
 
@@ -95,4 +99,57 @@ label {
 
 p {
     color: #3D3D3D;
+}
+
+.submit { 
+    float: left;
+    height: 40px; 
+    width: 125px; 
+    margin-top: 20px;
+    text-align: center; 
+    color: #758F8A;
+    background: #FFFFFF;
+    font-family: 'Nunito', sans-serif;; 
+    font-size: 18px; 
+    border: 1.5px solid #3D3D3D; 
+    border-radius: 5px; 
+}
+
+.cancel { 
+    float: right;
+    height: 40px; 
+    width: 125px; 
+    margin-top: 20px;
+    text-align: center; 
+    color: #758F8A;
+    background: #FFFFFF;
+    font-family: 'Nunito', sans-serif;; 
+    font-size: 18px; 
+    border: 1.5px solid #3D3D3D; 
+    border-radius: 5px; 
+}
+
+.reset { 
+    position: absolute;
+    height: 40px; 
+    width: 125px; 
+    margin-top: 25px;
+    margin-left: 205px;
+    text-align: center; 
+    color: #758F8A;
+    background: #FFFFFF;
+    font-family: 'Nunito', sans-serif;; 
+    font-size: 18px; 
+    border: 1.5px solid #3D3D3D; 
+    border-radius: 5px; 
+}
+
+.submit:active, .cancel:active, .reset:active { 
+    color: grey;
+    font-size: 16px;
+    border-color: #FFFFFF;
+}
+
+.submit:hover, .cancel:hover, .reset:hover {
+    cursor: pointer;
 }
