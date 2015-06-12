@@ -10,39 +10,39 @@
 	</head>
 	<body ng-controller="StaffCalculator">
 		<div id="container">
-			<form id="MealForm" class="form" name="MealForm" ng-submit="calculate()">
+			<form id="MealForm" class="form" name="MealForm" ng-submit="calculateCharges()">
 				<h1>Meal Details</h1>
 				<hr>
 				<div class="content">
 					<div class="field">
-						<label for="BaseMealPrice">Base Meal Price: $</label><input type="number" id="BaseMealPrice" name="BaseMealPrice" autocomplete="off" placeholder="0.00" ng-maxlength="8" ng-model="data.meal_price" required>
-						<label for="TaxRate">Tax Rate: %</label><input type="number" id="TaxRate" name="TaxRate" ng-model="data.tax_rate" autocomplete="off" placeholder="0" ng-maxlength="4" required>
-						<label for="TipPercentage">Tip Percentage: %</label><input type="number" id="TipPercentage" name="TipPercentage" autocomplete="off" placeholder="0" ng-maxlength="4" ng-model="data.tip_percentage" required>
+						<label for="BaseMealPrice">Base Meal Price: $</label><input type="number" id="BaseMealPrice" name="BaseMealPrice" min="0" autocomplete="off" placeholder="0.00" ng-maxlength="8" ng-model="data.meal_price" required>
+						<label for="TaxRate">Tax Rate: %</label><input type="number" id="TaxRate" name="TaxRate" min="0" max="10" ng-model="data.tax_rate" autocomplete="off" placeholder="0" ng-maxlength="4" required>
+						<label for="TipPercentage">Tip Percentage: %</label><input type="number" id="TipPercentage" name="TipPercentage" min="0" max="100" autocomplete="off" placeholder="0" ng-maxlength="4" ng-model="data.tip_percentage" required>
 					</div>
 				</div>
 				<button ng-disabled="MealForm.$invalid" class="submit" type="submit">Submit</button>
-				<button class="cancel" type="button">Cancel</button>
+				<button ng-disabled="MealForm.$pristine" class="cancel" type="button" ng-click="clearInputFields()">Cancel</button>
 			</form>
 			<form id="CustomerForm" class="form">
 				<h1>Customer Charges</h1>
 				<hr>
 				<div class="content">
-					<p>Subtotal: {{data.subtotal}}</p>
-					<p>Tip: {{}}</p>
+					<p>Subtotal: ${{data.subtotal}}</p>
+					<p>Tip: ${{data.tip}}</p>
 					<hr>
-					<p>Total: {{}}</p>
+					<p>Total: ${{data.total}}</p>
 				</div>
 			</form>
 			<form id="EarningsForm" class="form">
 				<h1>Earnings Info</h1>
 				<hr>
 				<div class="content">
-					<p>Tip Total: {{}}</p>
-					<p>Meal count: {{}}</p>
-					<p>Average Tip: {{}}</p>
+					<p>Tip Total: ${{data.tips_total}}</p>
+					<p>Meal count: {{data.meal_count}}</p>
+					<p>Average Tip: ${{data.average_tip}}</p>
 				</div>
 			</form>
 		</div>
-		<button class="reset" type="reset" ng-click="resetForm()">Reset</button>
+		<button ng-disabled="MealForm.$pristine" class="reset" type="reset" ng-click="resetForm()">Reset</button>
 	</body>
 </html>

@@ -68,7 +68,7 @@ form h1 {
 
 input {
     height: 25px;
-    font-size: 14px;
+    font-size: 15px;
     color: #3D3D3D;
 }
 
@@ -146,10 +146,18 @@ p {
 
 .submit:active, .cancel:active, .reset:active { 
     color: grey;
-    font-size: 16px;
     border-color: #FFFFFF;
 }
 
 .submit:hover, .cancel:hover, .reset:hover {
     cursor: pointer;
+}
+
+.submit:disabled, .reset:disabled, .cancel:disabled {
+    border-color: #D9D9D9;
+    color: #D9D9D9;
+}
+
+p {
+    font-size: 15px;
 }
