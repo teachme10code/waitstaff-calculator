@@ -1,7 +1,39 @@
 "use strict";
 
-angular.module('myApp', [])
-	.controller('StaffCalculator', function($scope) {
+angular.module('myApp', ['ngRoute'])
+	.config(function($routeProvider){
+        $routeProvider.when('/', {
+            templateUrl: './home.html',
+            controller : 'HomeCtrl'
+        })
+        .when('/new-meal', {
+            templateUrl : './new-meal.html',
+            controller : 'calculatorCtrl',
+        })
+        .when('/my-earnings', {
+            templateUrl : './my-earnings.html',
+            controller : 'calculatorCtrl',
+        })
+        .when('/error', {
+		    template : '<p>Error Page Not Found</p>'
+		});/*
+        resolve : {
+        	city: function(owmCities, $route, $location, $timeout) {
+        	var city = $route.current.params.city;
+	        if(owmCities.indexOf(city) == -1 ) {
+	            $location.path('/error');
+	            return;
+	        }
+        	return city;
+    	}*/
+    })
+
+    //define an application controller
+
+    .controller('HomeCtrl', function($scope) {
+    })
+
+	.controller('calculatorCtrl', function($scope) {
 		var meal_count = 0;
 		var average_tip = 0;
 		var tip = 0;

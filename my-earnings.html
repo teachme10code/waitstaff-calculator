@@ -1,0 +1,12 @@
+<div class="container">
+	<form id="EarningsForm" class="form">
+		<h1>Earnings Info</h1>
+		<hr>
+		<div class="content">
+			<p>Tip Total: ${{data.tips_total}}</p>
+			<p>Meal count: {{data.meal_count}}</p>
+			<p>Average Tip: ${{data.average_tip}}</p>
+		</div>
+	</form>
+	<button ng-disabled="MealForm.$pristine" class="reset" type="reset" ng-click="resetForm()">Reset</button>
+</div>

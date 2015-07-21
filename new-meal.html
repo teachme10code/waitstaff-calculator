@@ -1,0 +1,25 @@
+<div class="container">
+	<form id="MealForm" class="form" name="MealForm" ng-submit="calculateCharges()">
+		<h1>Meal Details</h1>
+		<hr>
+		<div class="content">
+			<div class="field">
+				<label for="BaseMealPrice">Base Meal Price: $</label><input type="text" id="BaseMealPrice" name="BaseMealPrice" min="0" autocomplete="off" placeholder="0.00" ng-maxlength="8" ng-model="data.meal_price" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+				<label for="TaxRate">Tax Rate: %</label><input type="text" id="TaxRate" name="TaxRate" min="0" max="10" ng-model="data.tax_rate" autocomplete="off" placeholder="0" ng-maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+				<label for="TipPercentage">Tip Percentage: %</label><input type="text" id="TipPercentage" name="TipPercentage" min="0" max="100" autocomplete="off" placeholder="0" ng-maxlength="4" ng-model="data.tip_percentage" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required>
+			</div>
+		</div>
+		<button ng-disabled="MealForm.$invalid" class="submit" type="submit">Submit</button>
+		<button ng-disabled="MealForm.$pristine" class="cancel" type="button" ng-click="clearInputFields()">Cancel</button>
+	</form>
+	<form id="CustomerForm" class="form">
+		<h1>Customer Charges</h1>
+		<hr>
+		<div class="content">
+			<p>Subtotal: {{data.subtotal | currency : $USD : 2}}</p>
+			<p>Tip: {{data.tip | currency : $USD : 2}}</p>
+			<hr>
+			<p>Total: ${{data.total}}</p>
+		</div>
+	</form>
+</div>
